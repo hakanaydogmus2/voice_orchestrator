@@ -329,17 +329,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/63/fe/a17c106a1f4061ce83f04d14bcedcfb2c38c7793ea56bfb906a6fadae8cb/evdev-1.9.2.tar.gz", hash = "sha256:5d3278892ce1f92a74d6bf888cc8525d9f68af85dbe336c95d1c87fb8f423069", size = 33301, upload-time = "2025-05-01T19:53:47.69Z" }
 
 [[package]]
-name = "evdev-binary"
-version = "1.9.2"
-source = { registry = "https://pypi.org/simple" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/bd/09/f5061fc73d3af808c43b2efb7f00e26483ac8308aab53d16085cd7d27002/evdev_binary-1.9.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:7f9f221edc89bf2912c4eca60c65ce2cf2a0333ee242e0f9e8ca2922f5a20678", size = 111300, upload-time = "2025-05-01T19:54:13.474Z" },
-    { url = "https://files.pythonhosted.org/packages/89/5c/f5efdf69fa14310c273ca975e63751ee5fc675321a0c910a76717cd7bd22/evdev_binary-1.9.2-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:594ea8bbabf0ac8f5e8ee469b31120cb65b1cafebac6aa65f55d7288c7133504", size = 112195, upload-time = "2025-05-01T19:54:14.864Z" },
-    { url = "https://files.pythonhosted.org/packages/bb/c2/38f75d3ce4b72b7abe69d7d2ff8e5c286d63e5e11f081768f27d7933b757/evdev_binary-1.9.2-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:537e519dd75781b558eb81a1f826af77e4f3f1038a83857791173c643f6565ab", size = 111421, upload-time = "2025-05-01T19:54:16.871Z" },
-    { url = "https://files.pythonhosted.org/packages/8d/91/6d027f6a146c54b76b44be19b0d505344cb1ea030c2516dfa4de64336ad0/evdev_binary-1.9.2-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:da9e0c089d48c12f753defa2086c799e779ee33c01e3b543ae90a9154dda8d40", size = 112346, upload-time = "2025-05-01T19:54:19.116Z" },
-]
-
-[[package]]
 name = "frozenlist"
 version = "1.7.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1036,7 +1025,6 @@ dependencies = [
     { name = "deepgram-sdk" },
     { name = "dotenv" },
     { name = "elevenlabs" },
-    { name = "evdev-binary" },
     { name = "numpy" },
     { name = "openai" },
     { name = "pydantic-settings" },
@@ -1051,7 +1039,6 @@ requires-dist = [
     { name = "deepgram-sdk", specifier = ">=4.8.1" },
     { name = "dotenv", specifier = ">=0.9.9" },
     { name = "elevenlabs", specifier = ">=2.16.0" },
-    { name = "evdev-binary", specifier = ">=1.9.2" },
     { name = "numpy", specifier = ">=2.3.3" },
     { name = "openai", specifier = ">=1.108.1" },
     { name = "pydantic-settings", specifier = ">=2.10.1" },

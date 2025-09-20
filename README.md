@@ -29,9 +29,15 @@ Ana bileşenler:
 ---
 ## Gereksinimler
 - Python 3.12+
-- `uv` (container içinde zaten var; lokal için bkz. kurulum)
+- `uv` 
 - Deepgram, OpenAI ve ElevenLabs API anahtarları
-- (Canlı mikrofon için) Çalışan bir ALSA / PulseAudio / PipeWire ortamı
+- FFmpeg kurulumu https://ffmpeg.org/ 
+- Windows için https://github.com/BtbN/FFmpeg-Builds/releases/tag/latest ortam değişkenlerine eklenmeli
+- linux için 
+```bash
+sudo apt update
+sudo apt install ffmpeg
+```
 
 ---
 ## Kurulum (Lokal, uv ile)
@@ -44,11 +50,10 @@ Bağımlılıkları senkronize edin:
 ```bash
 uv sync
 ```
-Sanal ortamı etkinleştirmeden doğrudan komut çalıştırmak için `uv run` kullanılabilir.
 
 ---
 ## Ortam Değişkenleri
-`.env` dosyası oluşturup aşağıdakileri ekleyin veya kabuğunuza export edin:
+`.env` dosyası oluşturup aşağıdakileri ekleyin
 ```
 DEEPGRAM_API_KEY=
 DEEPGRAM_MODEL=
@@ -61,16 +66,9 @@ ELEVENLABS_MODEL=
 LOG_DIR=
 ```
 
-> Not: Değerleri ihtiyacınıza göre güncelleyin. `LOG_DIR` yoksa oluşturulur.
 
-`.env` yüklemek için:
-```bash
-export $(grep -v '^#' .env | xargs)
-```
-
----
 ## Çalıştırma (Lokal)
-```bash
+
 uv run main.py
 ```
 Uygulama başladıktan sonra:
