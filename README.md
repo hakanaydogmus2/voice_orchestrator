@@ -1,6 +1,6 @@
 # Voice Orchestrator 🎙️
 
-Gerçek zamanlı ses -> metin -> LLM -> metin -> ses akışı orkestrasyonu. Mikrofon girdisini alır, Deepgram ile canlı olarak çözümler, OpenAI LLM ile yanıt üretir, ElevenLabs ile tekrar sese dönüştürür ve cevap verir
+mikrofonunuzdan gelen sesi gerçek zamanlı olarak işleyip yanıt veren bir akış sistemi sunar. Ses akışı önce metne dönüştürülür (STT), ardından LLM ile yanıt üretilir ve tekrar sese çevrilir (TTS). Sonuç olarak, canlı ve doğal bir konuşma deneyimi sağlar.
 
 ---
 ## Özellikler
@@ -20,7 +20,7 @@ Gerçek zamanlı ses -> metin -> LLM -> metin -> ses akışı orkestrasyonu. Mik
 ```
 Ana bileşenler:
 - `src/audio.py` : Mikrofon akışı ve tuş dinleyici
-- `src/stt_deepgram.py` : Deepgram gerçek zamanlı çözümleme
+- `src/stt_deepgram.py` : Deepgram ile STT
 - `src/llm_openai.py` : OpenAI istemcisi
 - `src/tts_elevenlabs.py` : ElevenLabs TTS çağrıları
 - `src/orchestrator.py` : Akış orkestrasyonu
@@ -32,8 +32,8 @@ Ana bileşenler:
 - `uv` 
 - Deepgram, OpenAI ve ElevenLabs API anahtarları
 - FFmpeg kurulumu https://ffmpeg.org/ 
-- Windows için https://github.com/BtbN/FFmpeg-Builds/releases/tag/latest ortam değişkenlerine eklenmeli
-- linux için 
+- Windows: [BtbN FFmpeg Builds](https://github.com/BtbN/FFmpeg-Builds/releases/tag/latest) → PATH’e ekleyin
+- Linux 
 ```bash
 sudo apt update
 sudo apt install ffmpeg
@@ -41,11 +41,18 @@ sudo apt install ffmpeg
 
 ---
 ## Kurulum (Lokal, uv ile)
-`uv` yoksa kurun:
+`uv` yüklü değilse kurun:
+
+Linux
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
-# sonra PATH'e eklendiğinden emin olun (örn ~/.local/bin)
 ```
+
+Windows
+```bash
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
 Bağımlılıkları senkronize edin:
 ```bash
 uv sync
@@ -68,7 +75,7 @@ LOG_DIR=
 
 
 ## Çalıştırma (Lokal)
-
+```
 uv run main.py
 ```
 Uygulama başladıktan sonra:
